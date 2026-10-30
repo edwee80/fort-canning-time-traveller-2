@@ -865,11 +865,6 @@ footer {
 }
 
 /* Heritage field passport — 7 checkpoints matching Guide.pdf */
-.places-section {
-  background: #e5d8be;
-  padding: 85px max(5vw, calc((100vw - 1260px)/2))
-}
-
 .passport-section {
   display: flex;
   flex-direction: column;
@@ -881,13 +876,7 @@ footer {
 .places-wrap {
   width: 100%;
   max-width: 1120px;
-  margin: 0 auto
-}
-
-@media (max-width: 700px) {
-  .places-section {
-    padding: 60px 22px
-  }
+  margin-top: 25px
 }
 
 .places-wrap h2 {
