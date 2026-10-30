@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#34271f"><title>Fort Canning | Time Traveller</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div class="paper-noise"></div>
+<header class="site-header"><a class="brand" href="#home" aria-label="Time Traveller home"><span class="brand-icon">✥</span><span>FORT CANNING <small>TIME TRAVELLER</small></span></a><nav aria-label="Main navigation"><a href="#journey">The Journey</a><a href="#passport">My Passport</a><a href="#about">Field Notes</a></nav><button id="menuBtn" class="menu-btn" aria-label="Open navigation">☰</button></header>
+<main id="home">
+<section class="hero"><div class="hero-ornament">✦ &nbsp; A HERITAGE ADVENTURE &nbsp; ✦</div><p class="eyebrow">SINGAPORE · FORT CANNING HILL</p><h1>Walk Through <em>Time.</em></h1><p class="hero-sub">Every path holds a story. Follow three historical chapters across seven centuries, navigate two curated MRT walking routes, and collect all seven heritage stamps of Fort Canning.</p><div class="hero-actions"><a href="#journey" class="button button-gold">Begin the journey <span>↗</span></a><a href="#passport" class="button button-outline">Open your passport</a></div><div class="hero-foot"><span>✥ 3 STORY CHAPTERS &amp; QUIZZES</span><span>✥ 7 ON-SITE CHECKPOINTS</span><span>✥ 2 MRT WALKING ROUTES</span><span>✥ OFFICIAL PDF CERTIFICATE</span></div><div class="hero-illustration" aria-hidden="true"><svg viewBox="0 0 520 510" role="img"><defs><radialGradient id="sun"><stop stop-color="#e9d3a3"/><stop offset="1" stop-color="#e9d3a3" stop-opacity="0"/></radialGradient></defs><circle cx="270" cy="226" r="204" fill="url(#sun)" opacity=".3"/><circle cx="270" cy="225" r="168" fill="none" stroke="#a17d4f" stroke-width="1" stroke-dasharray="5 8"/><path d="M84 430 Q150 372 202 399 T323 384 T470 415" fill="none" stroke="#8e7654" stroke-width="3"/><path d="M155 400 V210 L260 143 L365 210 V400" fill="#b69a70" stroke="#4d3b2a" stroke-width="5"/><path d="M179 392 V221 L260 169 L340 221 V392" fill="#e5d2a8" stroke="#7e6342" stroke-width="3"/><path d="M140 215 L260 130 L380 215" fill="none" stroke="#4d3b2a" stroke-width="10"/><path d="M221 400 V293 Q260 245 299 293 V400" fill="#493b2c"/><path d="M236 400 V298 Q260 273 284 298 V400" fill="#6c5940"/><path d="M193 255 H219 V291 H193 Z M302 255 H328 V291 H302 Z" fill="#68553e"/><path d="M105 402 Q80 340 101 288 Q124 316 124 360 M410 402 Q433 337 412 275 Q391 321 390 364" fill="none" stroke="#536347" stroke-width="13" stroke-linecap="round"/><path d="M73 301 Q104 267 138 299 M382 284 Q412 254 447 291" fill="none" stroke="#536347" stroke-width="10" stroke-linecap="round"/><path d="M260 130 V86 M242 103 H278" stroke="#66523a" stroke-width="5"/><text x="260" y="465" text-anchor="middle" font-family="Georgia" font-size="18" fill="#705638" letter-spacing="4">FORT CANNING · EST. 1860</text></svg></div></section>
+<section class="intro" id="journey"><div class="section-kicker">THE EXPEDITION</div><h2>Three chapters. <em>One extraordinary hill.</em></h2><p>Discover the hill's royal associations, colonial fortifications, and wartime history. Read each chapter, answer three questions, and earn a passport stamp.</p><div class="progress-wrap"><div><strong id="progressText">0 of 3 chapters completed</strong><span id="progressPercent">0%</span></div><div class="progress-track"><div id="progressBar" class="progress-fill"></div></div></div><div class="chapters" id="chapterCards"></div></section>
+<section class="passport-section" id="passport">
+<div class="passport-copy">
+  <div class="passport-copy-left">
+    <div class="section-kicker">YOUR TRAVEL RECORD</div>
+    <h2>The Time Traveller <em>Passport</em></h2>
+    <p>Visit the seven checkpoints of the Heritage Field Guide, photograph what you see, and collect each custom-illustrated heritage sticker. Tap a stamp to jump to its checkpoint. Your progress is saved on this device.</p>
+    <div class="explorer-name-box">
+      <label for="explorerNameInput">ISSUED TO TIME TRAVELLER:</label>
+      <input type="text" id="explorerNameInput" maxlength="42" placeholder="Enter your name or team name for the certificate…" autocomplete="name">
+    </div>
+  </div>
+  <div class="passport-copy-right">
+    <div id="stampStatus" class="stamp-status">0 of 7 checkpoints stamped</div>
+    <div class="download-actions">
+      <button id="downloadCertificate" class="export-button" type="button" disabled>↓ Download your Completion Certificate (PDF)</button>
+      <button id="downloadGuide" class="export-button" type="button">↓ Download Heritage Field Guide (PDF)</button>
+    </div>
+    <p class="download-help" id="downloadHelp" aria-live="polite">The 8-page field guide includes the trail map, transit access points and all seven checkpoints.</p>
+    <button id="resetBtn" class="text-button">↺ Reset my journey</button>
+  </div>
+</div>
+<div class="passport-book" id="passportBook">
+  <div class="cert-corner cert-corner-tl" aria-hidden="true"></div>
+  <div class="cert-corner cert-corner-tr" aria-hidden="true"></div>
+  <div class="cert-corner cert-corner-bl" aria-hidden="true"></div>
+  <div class="cert-corner cert-corner-br" aria-hidden="true"></div>
+  <div class="passport-top">
+    <span>REPUBLIC OF STORIES &nbsp;|&nbsp; HERITAGE EXPEDITION</span>
+    <span class="passport-top-mid">BUKIT LARANGAN &nbsp;—&nbsp; FORT CANNING HILL</span>
+    <span id="certDocNo">DOCUMENT NO. FC-DHOBY-1860</span>
+  </div>
+  <div class="cert-header">
+    <h3>HERITAGE PASSPORT CERTIFICATE</h3>
+    <p class="passport-sub" id="certSubtitle">Official Attestation of Exploration · Dhoby Ghaut MRT Expedition Circuit</p>
+    <p class="cert-bearer-line" id="certBearerLine">PRESENTED TO TIME TRAVELLER: <strong id="certBearerName">HERITAGE EXPLORER</strong></p>
+    <p class="cert-attestation-desc" id="certAttestationDesc">This certifies that the bearer has completed the walking trail starting from Dhoby Ghaut MRT to Fort Canning MRT, discovering and validating all seven historical checkpoints.</p>
+    <div class="passport-progress" aria-hidden="true"><div id="passportProgress"></div></div>
+  </div>
+  <div class="stamp-grid" id="stamps"></div>
+  <div class="cert-bottom-row">
+    <div class="cert-seal" aria-hidden="true">
+      <div class="cert-seal-inner">
+        <span class="seal-brand">FORT CANNING</span>
+        <span class="seal-sub">OFFICIAL SEAL</span>
+        <span class="seal-sub">FIELD PASSPORT</span>
+        <span class="seal-brand">SINGAPORE</span>
+      </div>
+    </div>
+    <div class="cert-center-text">
+      <strong id="certFooterCenter">DHOBY GHAUT ROUTE CIRCUIT &nbsp;—&nbsp; REPUBLIC OF STORIES</strong>
+      <p>Preserving 700 Years of Singapore’s Living &amp; Built Heritage</p>
+      <span class="cert-validated-date" id="certValidatedDate">Expedition Record · 0 of 7 Validated</span>
+    </div>
+    <div class="cert-audit-box">
+      <span class="audit-kicker">OFFICIAL FIELD AUDIT</span>
+      <strong class="audit-status" id="auditStatus">RECORD: 0 OF 7 COMPLETE</strong>
+      <span class="audit-sub" id="certAuditArchive">ARCHIVE ID: FC-2026-DHOBY</span>
+      <span class="audit-badge">[ PASSPORT EXAMINED &amp; SEALED ]</span>
+    </div>
+  </div>
+</div>
+<div class="places-wrap"><div class="section-kicker">LANDMARK FIELD GUIDE</div><h2>Places to <em>discover</em></h2><p class="places-intro">Explore seven checkpoints across the hill. Choose your starting station below — the stops are numbered in walking order for that route. Each stop includes a reference photograph, an interactive location map and directions. Use your phone camera to capture the checkpoint and unlock its story.</p><div class="route-picker" id="routePicker"></div><div class="places-grid" id="placesGrid"></div></div>
+</section>
+<section class="notes-section" id="about"><div class="section-kicker">FIELD NOTES &amp; VISITOR ESSENTIALS</div><h2>Before you set off</h2><div class="notes-grid"><article><span class="note-symbol">⌖</span><h3>Explore responsibly</h3><p>Follow existing park paths, respect heritage structures, and do not enter restricted areas. Check park opening information before visiting and stay on public paths. Photography is optional for the historical chapter quizzes.</p></article><article><span class="note-symbol">◷</span><h3>Best time &amp; pacing</h3><p>Visit between <strong>7:30 am – 10:30 am</strong> or <strong>4:30 pm – 6:30 pm</strong> for cooler weather, golden photography light, and shorter queues at the Tree Tunnel. Allow <strong>60–75 minutes</strong> for the full 7-stop trail.</p></article><article><span class="note-symbol">◈</span><h3>Transit &amp; access points</h3><p>Start from <strong>Dhoby Ghaut MRT (Exit B)</strong> for the Tree Tunnel on the northern slopes (mostly downhill walk after Stop 2), or <strong>Fort Canning MRT (Exit B)</strong> for Jubilee Park on the western foothills (outdoor escalators carry you uphill).</p></article><article><span class="note-symbol">🎟</span><h3>Admission &amp; Battlebox tickets</h3><p><strong>Fort Canning Park is 100% free</strong> and open 24 hours daily. The exterior of the <strong>Battlebox</strong> bunker is free to visit and stamp; entering the underground rooms requires a timed-entry ticket.</p></article><article><span class="note-symbol">💧</span><h3>Restrooms, water &amp; shelter</h3><p>Public restrooms, water refill stations, and rain shelters are located at <strong>Fort Canning Centre</strong> (hilltop plateau), <strong>Jubilee Park</strong>, and near the <strong>Battlebox Visitor Centre</strong>.</p></article><article><span class="note-symbol">📸</span><h3>Camera &amp; offline guide</h3><p>All photo checks happen privately on your device—no images are uploaded. Download your route's <strong>8-page PDF Field Guide</strong> before setting off so you have the full map offline.</p></article></div></section>
+</main>
+<div id="chapterModal" class="modal" aria-hidden="true"><div class="modal-backdrop" data-close="true"></div><div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button id="closeModal" class="modal-close" aria-label="Close chapter">×</button><div id="modalContent"></div></div></div>
+<footer><span>✥ FORT CANNING TIME TRAVELLER</span><span>Designed for heritage discovery · Educational prototype</span></footer><div id="heritageDialog" class="heritage-dialog" role="dialog" aria-modal="true" aria-labelledby="heritageDialogTitle" hidden><div class="heritage-dialog-panel"><button type="button" id="closeHeritageDialog" class="heritage-close" aria-label="Close heritage story">×</button><img id="heritageDialogStamp" class="heritage-dialog-stamp" src="" alt="" aria-hidden="true"><div class="section-kicker">HERITAGE DISCOVERED · STAMP COLLECTED</div><h2 id="heritageDialogTitle"></h2><p id="heritageDialogText"></p><div class="dialog-actions"><button type="button" class="tts-btn" id="heritageDialogTts">🔊 Listen to Audio Guide</button><button type="button" class="export-button" id="heritageDialogDone">Continue exploring →</button></div></div></div><script src="assets/jspdf.umd.min.js"></script>
+<script>
+  if (!window.jspdf && !window.jsPDF) {
+    document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"><\/script>');
+  }
+</script>
+<script src="assets/sticker-images.js"></script>
+<script src="app.js"></script>
+<script src="passport.js"></script>
+</body>
+</html>
