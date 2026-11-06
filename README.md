@@ -14,11 +14,9 @@ A static mobile-friendly educational website with three historical chapters and 
 
    Then open http://localhost:8000 in your browser.
 
-## Test the camera
+## Use the passport
 
-On a phone, open the deployed website over HTTPS and tap **Take a photo** on a landmark card. The camera or a camera/file chooser will open depending on the device and browser. On desktop, the button opens a file picker. Captured photos are processed locally in the browser; they are not uploaded or saved to a server.
-
-The experimental automatic image comparison uses colour and brightness features and is **not** reliable landmark recognition. Different viewpoints, crops and lighting can prevent a true match, and unrelated photos may match. Visitors therefore explicitly confirm their own visit before collecting a stamp. The passport is a self-reported learning activity, not a verified attendance system.
+Each checkpoint can be stamped manually once you have visited it. The journey is a self-reported learning activity, not a verified attendance system, so each stamp is confirmed by the visitor on the device before it is saved locally.
 
 ## Publish with GitHub Pages
 
@@ -40,7 +38,7 @@ Alternatively, drag the entire site folder to Netlify Drop. Make sure the `asset
   5. Post-Fort Transformation (1920s) — Fort Canning Service Reservoir
   6. Jubilee Park (1935 onwards) — Recreation and heritage play
   7. World War II (1936–1942) — The Battlebox subterranean command bunker
-- Camera/file input, experimental on-device visual comparison and manual visit confirmation
+- Manual visit confirmation and route-based passport stamps
 - Collectible custom-illustrated heritage sticker stamps for each checkpoint
 - Route-aware 8-page Heritage Field Guide PDF downloads (`Fort-Canning-Heritage-Field-Guide-Dhoby-Ghaut-Route.pdf` and `Fort-Canning-Heritage-Field-Guide-Fort-Canning-Route.pdf`) with map pins, checkpoint list, and pages 2–8 ordered to match your selected starting MRT route (plus the base `Fort-Canning-Heritage-Field-Guide.pdf`)
 - Seven passport stamps saved in browser localStorage

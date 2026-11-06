@@ -343,12 +343,10 @@
         <div class="callout-box photo-spot-box"><strong>📸 Photo Spot Tip:</strong> ${esc(p.photoSpot)}</div>
         <div class="callout-box riddle-box"><strong>🔍 Look Around You:</strong> ${esc(p.riddle)}</div>
       </div>
-      <p class="place-prompt">Compare your view with the reference photo. Use the map below to locate the checkpoint.</p>
+      <p class="place-prompt">Use the map below to locate the checkpoint and record your visit.</p>
       <iframe class="place-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing ${esc(p.title)}" src="${esc(mapEmbed(p))}"></iframe>
       <div class="place-actions"><a href="${esc(mapsLink(p))}" target="_blank" rel="noopener noreferrer">↗ Walking directions</a>
-      <button type="button" class="capture-button" data-camera="${esc(p.id)}" aria-label="Take a photograph of ${esc(p.title)}"><svg class="camera-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><circle cx="12" cy="13" r="4"/></svg> Take a photo</button><button type="button" class="manual-stamp" data-manual="${esc(p.id)}">✥ Stamp manually</button></div>
-      <input class="camera-input" id="camera-${esc(p.id)}" type="file" accept="image/*" capture="environment" aria-label="Capture ${esc(p.title)} photograph">
-      <p class="photo-note">On phones this opens the camera when supported; on computers it may open a file picker. Images are checked locally and are not uploaded.</p>
+      <button type="button" class="manual-stamp" data-manual="${esc(p.id)}">✥ Stamp manually</button></div>
       <div class="place-feedback" id="feedback-${esc(p.id)}" aria-live="polite" hidden></div>
       <div class="place-story" id="story-${esc(p.id)}" ${visited[p.id] ? '' : 'hidden'}>
         <div class="story-header-row"><h4>✥ ${esc(p.storyTitle)}</h4><button type="button" class="tts-btn" data-tts="${esc(p.id)}">🔊 Listen to Audio Guide</button></div>
@@ -363,8 +361,6 @@
       </div>
       </div></article>`;
     }).join('');
-    document.querySelectorAll('[data-camera]').forEach(b => b.addEventListener('click', () => document.getElementById('camera-' + b.dataset.camera).click()));
-    places.forEach(p => document.getElementById('camera-' + p.id).addEventListener('change', e => checkPhoto(p, e.target.files?.[0])));
     document.querySelectorAll('[data-manual]').forEach(b => b.addEventListener('click', () => { const p = places.find(x => x.id === b.dataset.manual); if (p && window.confirm('Confirm that you have visited ' + p.title + '? Manual stamps are self-reported and do not verify your location.')) completePlace(p, 'manual'); }));
     document.querySelectorAll('[data-tts]').forEach(b => b.addEventListener('click', e => {
       const p = places.find(x => x.id === b.dataset.tts);
@@ -374,39 +370,7 @@
     }));
     updateStamps();
   }
-  async function getSignature(src) {
-    const img = new Image(); img.decoding = 'async';
-    if (src instanceof File) { const url = URL.createObjectURL(src); try { img.src = url; await img.decode(); } finally { URL.revokeObjectURL(url); } }
-    else { img.src = src; await img.decode(); }
-    const canvas = document.createElement('canvas'); canvas.width = 48; canvas.height = 48;
-    const ctx = canvas.getContext('2d', { willReadFrequently: true }); ctx.drawImage(img, 0, 0, 48, 48);
-    const a = ctx.getImageData(0, 0, 48, 48).data; let hist = Array(24).fill(0), lum = [];
-    for (let i = 0; i < a.length; i += 4) { const r = a[i], g = a[i + 1], b = a[i + 2]; hist[Math.min(7, r >> 5)]++; hist[8 + Math.min(7, g >> 5)]++; hist[16 + Math.min(7, b >> 5)]++; lum.push(.299 * r + .587 * g + .114 * b); }
-    return { hist: hist.map(x => x / 2304), lum };
-  }
-  function similarity(a, b) {
-    // Very approximate comparison: global colour distribution and coarse brightness pattern.
-    // NOT robust to viewpoint, lighting, crops or visually similar unrelated scenes.
-    let delta = 0; for (let i = 0; i < 24; i++)delta += Math.abs(a.hist[i] - b.hist[i]);
-    const histScore = Math.max(0, 1 - delta / 6);
-    let bright = 0; for (let i = 0; i < a.lum.length; i++)bright += Math.abs(a.lum[i] - b.lum[i]) / 255;
-    const pixelScore = Math.max(0, 1 - bright / a.lum.length);
-    return .55 * histScore + .45 * pixelScore;
-  }
-  async function checkPhoto(p, file) {
-    if (!file) return;
-    const box = document.getElementById('feedback-' + p.id); box.hidden = false;
-    if (!file.type.startsWith('image/')) { box.textContent = 'Please select or capture an image.'; return; }
-    box.textContent = 'Checking your photograph on this device…';
-    let score;
-    try { const [ref, shot] = await Promise.all([getSignature(p.img), getSignature(file)]); score = similarity(ref, shot); } catch (err) { box.textContent = 'This photo could not be read. Please try a different image.'; return; }
-    const url = URL.createObjectURL(file);
-    box.innerHTML = `<strong>Photo captured</strong><img alt="Your captured photo" src="${url}"><p>${score >= .88 ? 'Your photo looks visually similar to the reference.' : 'The automatic check could not confidently match the reference photo.'}</p><p class="photo-note">Experimental image comparison only. This does not verify your GPS location or prove that the photograph shows the landmark. Different lighting and camera angles can affect the result.</p><div class="review-actions"><button class="confirm" type="button" data-confirm="${esc(p.id)}">${score >= .88 ? 'Collect stamp (confirm visit)' : 'I visited this place — confirm manually'}</button><button type="button" data-retake="${esc(p.id)}">Retake photo</button></div>`;
-    const im = box.querySelector('img'); im.addEventListener('load', () => URL.revokeObjectURL(url), { once: true });
-    box.querySelector('[data-confirm]').addEventListener('click', () => completePlace(p));
-    box.querySelector('[data-retake]').addEventListener('click', () => { document.getElementById('camera-' + p.id).value = ''; document.getElementById('camera-' + p.id).click(); });
-  }
-  function completePlace(p, method = 'photo') {
+  function completePlace(p, method = 'manual') {
     visited[p.id] = { date: new Date().toISOString(), method }; store(); justStamped = p.id; updateStamps(); renderRoutePicker();
     document.getElementById('badge-' + p.id).textContent = '✓ PASSPORT STAMP COLLECTED';
     document.getElementById('badge-' + p.id).classList.add('done');
