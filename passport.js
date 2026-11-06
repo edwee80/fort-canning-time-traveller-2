@@ -4,11 +4,11 @@
   // Seven checkpoints — mirrors the Heritage Field Guide (assets/Fort-Canning-Heritage-Field-Guide.pdf).
   const places = [
     {
-      id: 'ancient-singapura', title: 'Ancient Singapura', era: '14th Century', period: 'ANCIENT SINGAPURA · 14TH CENTURY',
+      id: 'ancient-singapura', title: 'Sang Nila Utama', era: '14th Century', period: 'ANCIENT SINGAPURA · 14TH CENTURY',
       img: 'assets/checkpoints/cp1.jpg', sticker: 'assets/stickers/cp1.png', ink: '#1f54be', rgb: [31, 84, 190],
       query: 'Sang Nila Utama Garden Fort Canning Park Singapore',
       location: 'Southern slopes near Canning Rise & Cox Terrace, and the keramat precinct on Fort Canning Hill',
-      landmarks: ['Sang Nila Utama Garden', 'Pancur Larangan', 'Keramat Iskandar Shah'],
+      landmarks: ['Sang Nila Utama', 'Pancur Larangan', 'Keramat Iskandar Shah'],
       photoSpot: 'Frame the symmetrical Javanese split-brick gateway (Candi Bentar) reflecting in the lotus pool — best in morning or late-afternoon light.',
       riddle: 'At Pancur Larangan ("Forbidden Spring"), can you spot the hand-carved volcanic stone murals showing bathing scenes across three different centuries?',
       walkNext: {
@@ -21,7 +21,7 @@
       tip: 'Walk through the candi bentar gateways, observe the reflective pools, and approach the keramat respectfully.'
     },
     {
-      id: 'government-hill', title: 'Government Hill', era: 'Early 1800s', period: 'GOVERNMENT HILL · EARLY 1800S',
+      id: 'government-hill', title: 'Raffles Garden', era: 'Early 1800s', period: 'GOVERNMENT HILL · EARLY 1800S',
       img: 'assets/checkpoints/cp2.jpg', sticker: 'assets/stickers/cp2.png', ink: '#c92a2a', rgb: [201, 42, 42],
       query: 'Raffles Garden Fort Canning Park Singapore',
       location: 'Upper hill plateau near Fort Canning Centre, Raffles Garden and the Fort Canning Lighthouse',
@@ -38,7 +38,7 @@
       tip: 'Stand near the summit and imagine the open harbour view that once made this hill ideal for government and communication.'
     },
     {
-      id: 'christian-cemetery', title: 'Old Christian Cemetery', era: '1822 – 1865', period: 'OLD CHRISTIAN CEMETERY · 1822 – 1865',
+      id: 'christian-cemetery', title: 'Gothic Gate', era: '1822 – 1865', period: 'GOTHIC GATE · 1822 – 1865',
       img: 'assets/checkpoints/cp3.jpg', sticker: 'assets/stickers/cp3.png', ink: '#7b2cbf', rgb: [123, 44, 191],
       query: 'Gothic Gate Fort Canning Park Singapore',
       location: 'Hilltop cemetery precinct near Fort Canning Green on Fort Canning Hill',
@@ -55,7 +55,7 @@
       tip: 'Look closely at the conserved brickwork and memorial elements to understand how the hill once served both the living settlement and its dead.'
     },
     {
-      id: 'military-fort', title: 'Military Fort', era: '1859 – 1907', period: 'MILITARY FORT · 1859 – 1907',
+      id: 'military-fort', title: 'Fort Gate', era: '1859 – 1907', period: 'FORT GATE · 1859 – 1907',
       img: 'assets/checkpoints/cp4.jpg', sticker: 'assets/stickers/cp4.png', ink: '#15803d', rgb: [21, 128, 61],
       query: 'Fort Gate Fort Canning Park Singapore',
       location: 'Hilltop plateau surrounding Fort Canning Centre and Fort Gate',
@@ -72,9 +72,9 @@
       tip: 'Inspect the thick masonry walls, the gate passage and the cannon platforms to imagine how the fortress once operated.'
     },
     {
-      id: 'reservoir', title: 'Post-Fort Transformation', era: '1920s', period: 'POST-FORT TRANSFORMATION · 1920S',
+      id: 'reservoir', title: 'Fort Canning Service Reservoir', era: '1920s', period: 'POST-FORT TRANSFORMATION · 1920S',
       img: 'assets/checkpoints/cp5.jpg', sticker: 'assets/stickers/cp5.png', ink: '#0e7490', rgb: [14, 116, 144],
-      query: 'Fort Canning Green Singapore',
+      query: 'Fort Canning Service Reservoir Singapore',
       location: 'Central hilltop reservoir precinct beneath Fort Canning Green',
       landmarks: ['Reservoir'],
       photoSpot: 'Take a wide panoramic shot across the sweeping lawn of Fort Canning Green framed by heritage rain trees and the classical facade of Fort Canning Centre.',
@@ -106,7 +106,7 @@
       tip: 'Use Jubilee Park as an accessible starting point, then move uphill to see how recreation and heritage meet on the same landscape.'
     },
     {
-      id: 'battlebox', title: 'World War II', era: '1936 – 1942', period: 'WORLD WAR II · 1936 – 1942',
+      id: 'battlebox', title: 'Battlebox', era: '1936 – 1942', period: 'WORLD WAR II · 1936 – 1942',
       img: 'assets/checkpoints/cp7.jpg', sticker: 'assets/stickers/cp7.png', ink: '#4b6b2b', rgb: [75, 107, 43],
       query: 'Battlebox Fort Canning Singapore',
       location: 'Cox Terrace, nine metres beneath Fort Canning Hill',
@@ -133,8 +133,8 @@
   };
   const SPOT = {
     'battlebox': 'Battlebox', 'military-fort': 'Fort Gate', 'christian-cemetery': 'Gothic Gate',
-    'ancient-singapura': 'Sang Nila Utama Garden', 'government-hill': 'Raffles Garden',
-    'reservoir': 'Fort Canning Green', 'jubilee-park': 'Jubilee Park'
+    'ancient-singapura': 'Sang Nila Utama', 'government-hill': 'Raffles Garden',
+    'reservoir': 'Fort Canning Service Reservoir', 'jubilee-park': 'Jubilee Park'
   };
   // Path drawn from Dhoby Ghaut (Tree Tunnel) down through the hill to Fort Canning MRT on the 1270×1053 Field Guide map.
   const DHOBY_PATH = [

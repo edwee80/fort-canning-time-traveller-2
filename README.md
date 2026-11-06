@@ -1,6 +1,6 @@
 # Fort Canning Time Traveller — Heritage Passport Prototype
 
-A static mobile-friendly educational website with three historical chapters and a five-landmark photo passport.
+A static mobile-friendly educational website with three historical chapters and seven heritage checkpoints, aligned to the official Heritage Guide.
 
 ## Run locally
 
@@ -31,13 +31,13 @@ Alternatively, drag the entire site folder to Netlify Drop. Make sure the `asset
 
 - Three educational history chapters and nine quiz questions
 - Seven Fort Canning heritage checkpoints matching the official Heritage Field Guide:
-  1. Ancient Singapura (14th Century) — Sang Nila Utama Garden, Pancur Larangan & Keramat Iskandar Shah
-  2. Government Hill (Early 1800s) — Raffles House, Raffles Garden, Flagstaff, Lighthouse & Timeball
-  3. Old Christian Cemetery (1822–1865) — Cemetery Walls, Gothic Gate, Cupolas & Napier Monument
-  4. Military Fort (1859–1907) — Fort Wall, Fort Gate, Powder Magazine, Sally Port & 9-Pound Cannon
-  5. Post-Fort Transformation (1920s) — Fort Canning Service Reservoir
-  6. Jubilee Park (1935 onwards) — Recreation and heritage play
-  7. World War II (1936–1942) — The Battlebox subterranean command bunker
+  1. Battlebox — subterranean wartime command bunker
+  2. Fort Gate — fortifications and historic military gate
+  3. Gothic Gate — former cemetery entrance and memorial precinct
+  4. Sang Nila Utama — royal hilltop garden and keramat precinct
+  5. Raffles Garden — colonial summit garden and observatory landmarks
+  6. Fort Canning Service Reservoir — hilltop reservoir and post-fort adaptation
+  7. Jubilee Park — modern heritage landscape and family recreation
 - Manual visit confirmation and route-based passport stamps
 - Collectible custom-illustrated heritage sticker stamps for each checkpoint
 - Route-aware 8-page Heritage Field Guide PDF downloads (`Fort-Canning-Heritage-Field-Guide-Dhoby-Ghaut-Route.pdf` and `Fort-Canning-Heritage-Field-Guide-Fort-Canning-Route.pdf`) with map pins, checkpoint list, and pages 2–8 ordered to match your selected starting MRT route (plus the base `Fort-Canning-Heritage-Field-Guide.pdf`)
