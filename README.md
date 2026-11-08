@@ -40,7 +40,7 @@ Alternatively, drag the entire site folder to Netlify Drop. Make sure the `asset
   7. Jubilee Park — modern heritage landscape and family recreation
 - Manual visit confirmation and route-based passport stamps
 - Collectible custom-illustrated heritage sticker stamps for each checkpoint
-- Route-aware 8-page Heritage Field Guide PDF downloads (`Fort-Canning-Heritage-Field-Guide-Dhoby-Ghaut-Route.pdf` and `Fort-Canning-Heritage-Field-Guide-Fort-Canning-Route.pdf`) with map pins, checkpoint list, and pages 2–8 ordered to match your selected starting MRT route (plus the base `Fort-Canning-Heritage-Field-Guide.pdf`)
+- Route-aware 8-page Heritage Field Guide PDF downloads (`Fort-Canning-Heritage-Field-Guide-Dhoby-Ghuat-Route.pdf` and `Fort-Canning-Heritage-Field-Guide-Fort-Canning-Route.pdf`) with map pins, checkpoint list, and pages 2–8 ordered to match your selected starting MRT route (plus the base `Fort-Canning-Heritage-Field-Guide.pdf`)
 - Seven passport stamps saved in browser localStorage
 - Downloadable route-specific landscape completion certificate with all 7 sticker seals once all checkpoints are stamped
 - Separate chapter quiz progress saved in browser localStorage

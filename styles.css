@@ -254,6 +254,17 @@ nav a:hover {
   color: var(--rust)
 }
 
+.intro-tagline {
+  margin: 0 0 16px;
+  font: normal clamp(30px, 3.8vw, 54px)/1.25 'Playfair Display', Georgia, serif;
+  color: var(--rust)
+}
+
+.intro-tagline em {
+  font-style: italic;
+  color: var(--rust)
+}
+
 .intro>p {
   max-width: 700px;
   line-height: 1.8;
@@ -1777,7 +1788,7 @@ footer {
 
 
 
-/* ── Route picker: start from Dhoby Ghaut or Fort Canning MRT ─────────── */
+/* ── Route picker: start from Dhoby Ghuat or Fort Canning MRT ─────────── */
 .route-picker {
   margin-top: 30px
 }

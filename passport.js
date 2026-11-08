@@ -111,11 +111,11 @@
       query: 'Battlebox Fort Canning Singapore',
       location: 'Cox Terrace, nine metres beneath Fort Canning Hill',
       landmarks: ['Battlebox'],
-      photoSpot: 'Bonus photo on the way from Dhoby Ghaut: look up from the bottom of the famous spiral staircase at the Fort Canning Tree Tunnel, then photograph the blast-proof steel doors of the Battlebox entrance!',
+      photoSpot: 'Bonus photo on the way from Dhoby Ghuat: look up from the bottom of the famous spiral staircase at the Fort Canning Tree Tunnel, then photograph the blast-proof steel doors of the Battlebox entrance!',
       riddle: 'Walk along the hillside above the bunker — can you spot the camouflaged brick ventilation shafts poking out of the grass that supplied fresh air 9 metres underground?',
       walkNext: {
         dhoby: 'Follow the shaded uphill trail from Cox Terrace towards the hilltop plateau to reach the stone ramparts of Fort Gate (about 4 mins).',
-        fortcanning: 'Route complete! Walk downhill past the famous Fort Canning Tree Tunnel spiral staircase to exit at Dhoby Ghaut MRT Station (Exit B, 4 mins).'
+        fortcanning: 'Route complete! Walk downhill past the famous Fort Canning Tree Tunnel spiral staircase to exit at Dhoby Ghuat MRT Station (Exit B, 4 mins).'
       },
       storyTitle: 'Malaya Command Underground',
       story: 'Between the late 1930s and early 1940s, the British built an underground command centre beneath Fort Canning Hill. Known today as the Battlebox, it served as headquarters for Malaya Command during the Malayan Campaign. Its protected rooms were designed to support military planning during air raids and bombardment.',
@@ -136,7 +136,7 @@
     'ancient-singapura': 'Sang Nila Utama', 'government-hill': 'Raffles Garden',
     'reservoir': 'Fort Canning Service Reservoir', 'jubilee-park': 'Jubilee Park'
   };
-  // Path drawn from Dhoby Ghaut (Tree Tunnel) down through the hill to Fort Canning MRT on the 1270×1053 Field Guide map.
+  // Path drawn from Dhoby Ghuat (Tree Tunnel) down through the hill to Fort Canning MRT on the 1270×1053 Field Guide map.
   const DHOBY_PATH = [
     [310, 48], [366, 86], [462, 160], [509.5, 283.0], [468, 336], [431.0, 389.0], [520, 355], [613.0, 327.0],
     [645, 435], [644.0, 575.5], [638, 645], [619.5, 705.0], [562, 665], [507.0, 617.5], [450, 650], [394.5, 682.0],
@@ -145,21 +145,21 @@
   const DHOBY_ORDER = ['battlebox', 'military-fort', 'christian-cemetery', 'ancient-singapura', 'government-hill', 'reservoir', 'jubilee-park'];
   const ROUTES = {
     dhoby: {
-      id: 'dhoby', label: 'Dhoby Ghaut MRT', lines: 'NS24 · NE6 · CC1',
+      id: 'dhoby', label: 'Dhoby Ghuat MRT', lines: 'NS24 · NE6 · CC1',
       entry: 'Exit B · enter via the Fort Canning Tree Tunnel',
       stats: ['⏱ 60–75 mins', '🥾 ~1.8 km trail', '↘ Mostly downhill after Stop 2', '📸 Starts at Tree Tunnel'],
-      finish: 'Fort Canning MRT', origin: 'Dhoby Ghaut MRT Station, Singapore',
+      finish: 'Fort Canning MRT', origin: 'Dhoby Ghuat MRT Station, Singapore',
       destination: 'Fort Canning MRT Station, Singapore', order: DHOBY_ORDER, path: DHOBY_PATH,
       mapImg: 'assets/map_route_dhoby.jpg',
-      guideFile: 'Fort-Canning-Heritage-Field-Guide-Dhoby-Ghaut-Route.pdf',
-      guideUrl: 'assets/Fort-Canning-Heritage-Field-Guide-Dhoby-Ghaut-Route.pdf'
+      guideFile: 'Fort-Canning-Heritage-Field-Guide-Dhoby-Ghuat-Route.pdf',
+      guideUrl: 'assets/Fort-Canning-Heritage-Field-Guide-Dhoby-Ghuat-Route.pdf'
     },
     fortcanning: {
       id: 'fortcanning', label: 'Fort Canning MRT', lines: 'DT20',
       entry: 'Exit B · enter via Jubilee Park',
       stats: ['⏱ 60–75 mins', '🥾 ~1.8 km trail', '🛗 Covered escalators uphill', '👨‍👩‍👧 Family & stroller-friendly start'],
-      finish: 'Dhoby Ghaut MRT',
-      origin: 'Fort Canning MRT Station, Singapore', destination: 'Dhoby Ghaut MRT Station, Singapore',
+      finish: 'Dhoby Ghuat MRT',
+      origin: 'Fort Canning MRT Station, Singapore', destination: 'Dhoby Ghuat MRT Station, Singapore',
       order: [...DHOBY_ORDER].reverse(), path: [...DHOBY_PATH].reverse(),
       mapImg: 'assets/map_route_fortcanning.jpg',
       guideFile: 'Fort-Canning-Heritage-Field-Guide-Fort-Canning-Route.pdf',
@@ -210,7 +210,7 @@
 
     const subEl = document.getElementById('certSubtitle');
     if (subEl) subEl.textContent = r.id === 'dhoby'
-      ? 'Official Attestation of Exploration · Dhoby Ghaut MRT Expedition Circuit'
+      ? 'Official Attestation of Exploration · Dhoby Ghuat MRT Expedition Circuit'
       : 'Official Attestation of Exploration · Fort Canning MRT Expedition Circuit';
 
     const bearerEl = document.getElementById('certBearerName');
@@ -218,12 +218,12 @@
 
     const descEl = document.getElementById('certAttestationDesc');
     if (descEl) descEl.textContent = r.id === 'dhoby'
-      ? 'This certifies that the bearer has completed the walking trail starting from Dhoby Ghaut MRT (via Tree Tunnel) to Fort Canning MRT, discovering and validating all seven historical checkpoints.'
-      : 'This certifies that the bearer has completed the walking trail starting from Fort Canning MRT (via Jubilee Park) to Dhoby Ghaut MRT, discovering and validating all seven historical checkpoints.';
+      ? 'This certifies that the bearer has completed the walking trail starting from Dhoby Ghuat MRT (via Tree Tunnel) to Fort Canning MRT, discovering and validating all seven historical checkpoints.'
+      : 'This certifies that the bearer has completed the walking trail starting from Fort Canning MRT (via Jubilee Park) to Dhoby Ghuat MRT, discovering and validating all seven historical checkpoints.';
 
     const footEl = document.getElementById('certFooterCenter');
     if (footEl) footEl.innerHTML = r.id === 'dhoby'
-      ? 'DHOBY GHAUT ROUTE CIRCUIT &nbsp;—&nbsp; REPUBLIC OF STORIES'
+      ? 'DHOBY GHUAT ROUTE CIRCUIT &nbsp;—&nbsp; REPUBLIC OF STORIES'
       : 'FORT CANNING ROUTE CIRCUIT &nbsp;—&nbsp; REPUBLIC OF STORIES';
 
     const archEl = document.getElementById('certAuditArchive');
@@ -361,7 +361,7 @@
       </div>
       </div></article>`;
     }).join('');
-    document.querySelectorAll('[data-manual]').forEach(b => b.addEventListener('click', () => { const p = places.find(x => x.id === b.dataset.manual); if (p && window.confirm('Confirm that you have visited ' + p.title + '? Manual stamps are self-reported and do not verify your location.')) completePlace(p, 'manual'); }));
+    document.querySelectorAll('[data-manual]').forEach(b => b.addEventListener('click', () => { const p = places.find(x => x.id === b.dataset.manual); if (p) completePlace(p, 'manual'); }));
     document.querySelectorAll('[data-tts]').forEach(b => b.addEventListener('click', e => {
       const p = places.find(x => x.id === b.dataset.tts);
       if (p && window.toggleHeritageSpeech) {
@@ -483,7 +483,7 @@
 
       // 3. Top Running Header
       const docNo = r.id === 'dhoby' ? 'DOCUMENT NO. FC-DHOBY-1860' : 'DOCUMENT NO. FC-FTCANNING-1860';
-      const headerCircuit = r.id === 'dhoby' ? 'DHOBY GHAUT ROUTE  —  FORT CANNING HILL' : 'FORT CANNING ROUTE  —  FORT CANNING HILL';
+      const headerCircuit = r.id === 'dhoby' ? 'DHOBY GHUAT ROUTE  —  FORT CANNING HILL' : 'FORT CANNING ROUTE  —  FORT CANNING HILL';
       doc.setFont('times', 'bold'); doc.setFontSize(8.2); doc.setTextColor(112, 82, 54);
       doc.text('REPUBLIC OF STORIES  |  HERITAGE EXPEDITION', 28, 18.5);
       doc.setFontSize(8.2); doc.setTextColor(155, 120, 82);
@@ -495,12 +495,12 @@
 
       // 4. Grand Title & Attestation
       const certSub = r.id === 'dhoby'
-        ? 'Official Attestation of Exploration · Dhoby Ghaut MRT Expedition Circuit'
+        ? 'Official Attestation of Exploration · Dhoby Ghuat MRT Expedition Circuit'
         : 'Official Attestation of Exploration · Fort Canning MRT Expedition Circuit';
       const bearerTitle = 'PRESENTED TO TIME TRAVELLER: ' + (explorerName || 'HERITAGE EXPLORER').toUpperCase();
       const certDesc = r.id === 'dhoby'
-        ? 'This certifies that the bearer has completed the walking expedition from Dhoby Ghaut MRT (via Tree Tunnel) to Fort Canning MRT, validating all seven historical checkpoints.'
-        : 'This certifies that the bearer has completed the walking expedition from Fort Canning MRT (via Jubilee Park) to Dhoby Ghaut MRT, validating all seven historical checkpoints.';
+        ? 'This certifies that the bearer has completed the walking expedition from Dhoby Ghuat MRT (via Tree Tunnel) to Fort Canning MRT, validating all seven historical checkpoints.'
+        : 'This certifies that the bearer has completed the walking expedition from Fort Canning MRT (via Jubilee Park) to Dhoby Ghuat MRT, validating all seven historical checkpoints.';
 
       doc.setFont('times', 'bold'); doc.setFontSize(20); doc.setTextColor(48, 34, 22);
       doc.text('HERITAGE PASSPORT CERTIFICATE', 148.5, 29.2, { align: 'center' });
@@ -627,7 +627,7 @@
       doc.text('[ PASSPORT EXAMINED & SEALED ]', rx + rw / 2, ry + 24.2, { align: 'center' });
 
       const pdfName = r.id === 'dhoby'
-        ? 'Fort-Canning-Certificate-Dhoby-Ghaut-Route.pdf'
+        ? 'Fort-Canning-Certificate-Dhoby-Ghuat-Route.pdf'
         : 'Fort-Canning-Certificate-Fort-Canning-Route.pdf';
       doc.save(pdfName);
       document.getElementById('downloadHelp').textContent = `Completion certificate (${r.label} Route) downloaded!`;
