@@ -266,24 +266,8 @@
     return 'https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=' + encodeURIComponent(r.origin) + '&destination=' + encodeURIComponent(r.destination) + '&waypoints=' + encodeURIComponent(wp);
   }
   function routeSVG(r) {
-    const pts = r.path.map(p => p.join(',')).join(' ');
-    const [sx, sy] = r.path[0], [ex, ey] = r.path[r.path.length - 1];
-    const pin = (x, y, label, cls, dx, anchor) => `<g class="route-end ${cls}"><circle cx="${x}" cy="${y}" r="11"/><circle cx="${x}" cy="${y}" r="4.5" class="dot"/>
-      <text x="${x + dx}" y="${y + 5}" text-anchor="${anchor}">${esc(label)}</text></g>`;
-    const markers = r.order.map((id, i) => {
-      const p = places.find(x => x.id === id); const [x, y] = PIN[id]; const got = !!visited[id];
-      return `<a href="#stop-${esc(id)}" class="route-marker ${got ? 'got' : ''}" style="--ink:${p.ink};--d:${0.2 + i * 0.1}s" aria-label="Stop ${i + 1}: ${esc(p.title)}">
-        <title>Stop ${i + 1} · ${esc(p.title)} (${esc(p.era)})</title><circle class="halo" cx="${x}" cy="${y}" r="33"/><circle class="pin" cx="${x}" cy="${y}" r="26"/>
-        <text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="central">${i + 1}</text></a>`;
-    }).join('');
-    return `<svg class="route-svg" viewBox="80 10 1180 1030" role="img" aria-label="Official Heritage Field Guide Map of Fort Canning Park showing the walking route from ${esc(r.label)} to ${esc(r.finish)} with ${TOTAL} numbered stops">
-      <image href="${esc(r.mapImg)}" x="0" y="0" width="1270" height="1053"/>
-      <polyline class="route-line-shadow" points="${pts}"/>
-      <polyline class="route-line" points="${pts}"/>
-      <polyline class="route-line-flow" points="${pts}"/>
-      ${pin(sx, sy, 'START · ' + r.label, 'start', 16, 'start')}
-      ${pin(ex, ey, 'FINISH · ' + r.finish, 'finish', -16, 'end')}
-      ${markers}
+    return `<svg class="route-svg" viewBox="0 0 1270 1053" role="img" aria-label="Official Heritage Field Guide Map of Fort Canning Park showing the walking route from ${esc(r.label)} to ${esc(r.finish)}">
+      <image href="${esc(r.mapImg)}" x="0" y="0" width="1270" height="1053" preserveAspectRatio="xMidYMid meet"/>
     </svg>`;
   }
   function renderRoutePicker() {
